@@ -1,4 +1,4 @@
-package de.mapow.java14;
+package de.mapow.java15;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,8 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 /**
- * https://openjdk.org/jeps/368
+ * https://openjdk.org/jeps/378<br>
+ * https://howtodoinjava.com/java14/java-text-blocks
  *
  * @author mapow
  * @since 2024-11-30

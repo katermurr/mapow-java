@@ -9,7 +9,8 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 /**
- * https://openjdk.org/jeps/361
+ * https://openjdk.org/jeps/361<br>
+ * https://howtodoinjava.com/java14/switch-expressions/
  *
  * @author mapow
  * @since 2024-11-30
@@ -71,6 +72,21 @@ public class SwitchExpression {
         case MONDAY, TUESDAY, THURSDAY, FRIDAY -> false;
         case SATURDAY, SUNDAY -> true;
         default -> false;
+        };
+        LOG.debug("isWeekend: {}", isWeekend);
+        return isWeekend;
+    }
+
+    public static boolean yieldWithMultiStatmentsInCaseBlock(final DayOfWeek dayOfWeek) {
+        final boolean isWeekend = switch (dayOfWeek) {
+        case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> {
+            LOG.debug("It is WeekDay ... add business logic");
+            yield false;
+        }
+        case SATURDAY, SUNDAY -> {
+            LOG.debug("It is Weekend ... add business logic");
+            yield true;
+        }
         };
         LOG.debug("isWeekend: {}", isWeekend);
         return isWeekend;

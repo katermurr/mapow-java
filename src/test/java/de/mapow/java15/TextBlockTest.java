@@ -1,4 +1,4 @@
-package de.mapow.java14;
+package de.mapow.java15;
 
 import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,8 @@
-package de.mapow.java14;
+package de.mapow.java16;
 
 /**
  *
- * https://openjdk.org/jeps/359
+ * https://openjdk.org/jeps/395
  *
  * <pre>
  * - private, final field for each piece of data

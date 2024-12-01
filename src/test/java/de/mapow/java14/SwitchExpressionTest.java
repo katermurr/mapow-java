@@ -82,4 +82,24 @@ class SwitchExpressionTest {
         BDDAssertions.then(withoutDefault).isEqualTo(withDefault).isTrue();
     }
 
+    @ParameterizedTest
+    @EnumSource(value = DayOfWeek.class, mode = Mode.EXCLUDE, names = { "SATURDAY", "SUNDAY" })
+    void testYieldWithMultiStatmentsInCaseBlock_ShouldBeWeekday(final DayOfWeek day) {
+        // act
+        final boolean isWeekEnd = SwitchExpression.yieldWithMultiStatmentsInCaseBlock(day);
+
+        // assert
+        BDDAssertions.then(isWeekEnd).isFalse();
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = DayOfWeek.class, mode = Mode.INCLUDE, names = { "SATURDAY", "SUNDAY" })
+    void testYieldWithMultiStatmentsInCaseBlock_ShouldBeWeekend(final DayOfWeek day) {
+        // act
+        final boolean isWeekEnd = SwitchExpression.yieldWithMultiStatmentsInCaseBlock(day);
+
+        // assert
+        BDDAssertions.then(isWeekEnd).isTrue();
+    }
+
 }
