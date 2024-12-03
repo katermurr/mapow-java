@@ -33,6 +33,7 @@
         <configuration>
           <excludes>
             <exclude>de/mapow/java17/sealeddemo/*.class</exclude>
+            <exclude>de/mapow/java/threads/ThreadSleep.class</exclude>
           </excludes>
         </configuration>
       </plugin>
