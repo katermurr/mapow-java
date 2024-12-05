@@ -11,7 +11,7 @@
   </appender>
   <logger name="org" level="DEBUG" />
   <logger name="com" level="DEBUG" />
-  <logger name="de" level="TRACE" />
+  <logger name="eu.mapow" level="TRACE" />
 
   <property name="LOG_FILE" value="test-output.log" />
   <property name="LOG_DIR" value="target" />
