@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Test;
  */
 class ProcessApiTest {
 
-    @Test
-    void testPrintAll() {
-        final Info current = ProcessApi.printAll();
-        BDDAssertions.then(current.toString()).contains("java");
-    }
+  @Test
+  void testPrintAll() {
+    final Info current = ProcessApi.printAll();
+    BDDAssertions.then(current.toString()).contains("java");
+  }
 }

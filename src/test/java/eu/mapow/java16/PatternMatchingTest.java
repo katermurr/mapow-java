@@ -9,28 +9,28 @@ import org.junit.jupiter.api.Test;
  */
 class PatternMatchingTest {
 
-    @Test
-    void testCheckInstanceOf_CaseDouble() {
-        // arrange
-        final Double number = 5d;
+  @Test
+  void testCheckInstanceOf_CaseDouble() {
+    // arrange
+    final Double number = 5d;
 
-        // act
-        final String instanceOf = PatternMatching.checkInstanceOf(number);
+    // act
+    final String instanceOf = PatternMatching.checkInstanceOf(number);
 
-        // assert
-        BDDAssertions.then(instanceOf).isEqualTo("java.lang.Double - 5.0");
-    }
+    // assert
+    BDDAssertions.then(instanceOf).isEqualTo("java.lang.Double - 5.0");
+  }
 
-    @Test
-    void testCheckInstanceOf_CaseString() {
-        // arrange
-        final String string = "5";
+  @Test
+  void testCheckInstanceOf_CaseString() {
+    // arrange
+    final String string = "5";
 
-        // act
-        final String instanceOf = PatternMatching.checkInstanceOf(string);
+    // act
+    final String instanceOf = PatternMatching.checkInstanceOf(string);
 
-        // assert
-        BDDAssertions.then(instanceOf).isEqualTo("java.lang.String - 5");
-    }
+    // assert
+    BDDAssertions.then(instanceOf).isEqualTo("java.lang.String - 5");
+  }
 
 }

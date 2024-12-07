@@ -19,10 +19,10 @@ import eu.mapow.java17.sealeddemo.Rectangle.TransparentRectangle;
 @SuppressWarnings("java:S6217")
 public sealed class Rectangle extends Shape permits TransparentRectangle, FilledRectangle {
 
-    public final class TransparentRectangle extends Rectangle {
-    }
+  public final class TransparentRectangle extends Rectangle {
+  }
 
-    public final class FilledRectangle extends Rectangle {
-    }
+  public final class FilledRectangle extends Rectangle {
+  }
 
 }

@@ -39,6 +39,6 @@ package eu.mapow.java08;
 @FunctionalInterface
 public interface FunctionalInterfaceUsage<T> {
 
-    T process(T a, T b);
+  T process(T a, T b);
 
 }

@@ -10,15 +10,15 @@ import org.junit.jupiter.params.provider.CsvSource;
  */
 class VirtualThreadsTest {
 
-    @ParameterizedTest
-    @CsvSource(value = { "false,20,25", "true,1,3" })
-    void testRunThreads(final boolean isVirtualThreads, final double min, final double max) {
-        // arrange
-        final VirtualThreads virtualThreads = new VirtualThreads();
-        // act
-        final double duration = virtualThreads.runThreads(isVirtualThreads);
-        // assert
-        BDDAssertions.then(duration).isBetween(min, max);
-    }
+  @ParameterizedTest
+  @CsvSource(value = { "false,20,25", "true,1,3" })
+  void testRunThreads(final boolean isVirtualThreads, final double min, final double max) {
+    // arrange
+    final VirtualThreads virtualThreads = new VirtualThreads();
+    // act
+    final double duration = virtualThreads.runThreads(isVirtualThreads);
+    // assert
+    BDDAssertions.then(duration).isBetween(min, max);
+  }
 
 }

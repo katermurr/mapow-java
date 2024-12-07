@@ -17,10 +17,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LambdaExpression {
 
-    public static String lambdaParameter(final Supplier<String> supplier,
-                                         final IntUnaryOperator square,
-                                         final Consumer<String> consumer) {
-        consumer.accept("lambda");
-        return supplier.get() + " - " + square.applyAsInt(3);
-    }
+  public static String lambdaParameter(final Supplier<String> supplier,
+                                       final IntUnaryOperator square,
+                                       final Consumer<String> consumer) {
+    consumer.accept("lambda");
+    return supplier.get() + " - " + square.applyAsInt(3);
+  }
 }

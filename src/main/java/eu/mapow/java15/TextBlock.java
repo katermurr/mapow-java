@@ -16,23 +16,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TextBlock {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TextBlock.class);
+  private static final Logger LOG = LoggerFactory.getLogger(TextBlock.class);
 
-    @SuppressWarnings("squid:S6126")
-    public static String query() {
-        final String query = "SELECT `EMP_ID`, `LAST_NAME`, `FIRST_NAME` FROM `EMPLOYEE_TB`\n"
-                + "WHERE `CITY` = 'INDIANAPOLIS'\n" + "ORDER BY `EMP_ID`, `LAST_NAME`, `FIRST_NAME`;\n";
-        LOG.debug(query);
-        return query;
-    }
+  @SuppressWarnings("squid:S6126")
+  public static String query() {
+    final String query = "SELECT `EMP_ID`, `LAST_NAME`, `FIRST_NAME` FROM `EMPLOYEE_TB`\n"
+        + "WHERE `CITY` = 'INDIANAPOLIS'\n" + "ORDER BY `EMP_ID`, `LAST_NAME`, `FIRST_NAME`;\n";
+    LOG.debug(query);
+    return query;
+  }
 
-    public static String multilineQuery() {
-        final String query = """
-                SELECT `EMP_ID`, `LAST_NAME`, `FIRST_NAME` FROM `EMPLOYEE_TB`
-                WHERE `CITY` = 'INDIANAPOLIS'
-                ORDER BY `EMP_ID`, `LAST_NAME`, `FIRST_NAME`;
-                """;
-        LOG.debug(query);
-        return query;
-    }
+  public static String multilineQuery() {
+    final String query = """
+        SELECT `EMP_ID`, `LAST_NAME`, `FIRST_NAME` FROM `EMPLOYEE_TB`
+        WHERE `CITY` = 'INDIANAPOLIS'
+        ORDER BY `EMP_ID`, `LAST_NAME`, `FIRST_NAME`;
+        """;
+    LOG.debug(query);
+    return query;
+  }
 }

@@ -33,10 +33,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class OptionalUsage {
 
-    public static Optional<Integer> getOptional() {
-        // return Optional.of(null) => NullPointerException
-        // return null; java:S2789 Methods with an "Optional" return type should never return null.
+  public static Optional<Integer> getOptional() {
+    // return Optional.of(null) => NullPointerException
+    // return null; java:S2789 Methods with an "Optional" return type should never return null.
 
-        return Optional.empty(); // or Optional.ofNullable(null) or e.g. Optional.of(325)
-    }
+    return Optional.empty(); // or Optional.ofNullable(null) or e.g. Optional.of(325)
+  }
 }

@@ -16,12 +16,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class HelpfulNullPointer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HelpfulNullPointer.class);
+  private static final Logger LOG = LoggerFactory.getLogger(HelpfulNullPointer.class);
 
-    public static String throwNullPointer(final String arg) {
-        final String upperCase = arg.toUpperCase();
-        LOG.debug("{}", upperCase);
-        return upperCase;
-    }
+  public static String throwNullPointer(final String arg) {
+    final String upperCase = arg.toUpperCase();
+    LOG.debug("{}", upperCase);
+    return upperCase;
+  }
 
 }

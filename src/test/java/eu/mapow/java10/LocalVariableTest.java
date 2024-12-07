@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
  */
 class LocalVariableTest {
 
-    @Test
-    void tesDemoLocalVars() {
-        BDDAssertions.then(LocalVariable.demoLocalVars()).isEqualTo("Hello World");
-    }
+  @Test
+  void tesDemoLocalVars() {
+    BDDAssertions.then(LocalVariable.demoLocalVars()).isEqualTo("Hello World");
+  }
 }

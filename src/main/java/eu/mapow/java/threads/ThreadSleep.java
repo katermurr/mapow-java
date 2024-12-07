@@ -18,14 +18,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ThreadSleep {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ThreadSleep.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ThreadSleep.class);
 
-    public static void sleepOneSecond() {
-        try {
-            Thread.sleep(Duration.ofSeconds(1));
-        } catch (final InterruptedException cause) {
-            LOG.error("thread interrupted", cause);
-            Thread.currentThread().interrupt();
-        }
+  public static void sleepOneSecond() {
+    try {
+      Thread.sleep(Duration.ofSeconds(1));
+    } catch (final InterruptedException cause) {
+      LOG.error("thread interrupted", cause);
+      Thread.currentThread().interrupt();
     }
+  }
 }

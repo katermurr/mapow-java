@@ -32,38 +32,38 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MethodReference {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MethodReference.class);
+  private static final Logger LOG = LoggerFactory.getLogger(MethodReference.class);
 
-    static class Printer {
-        void print(final String message) {
-            LOG.debug("print: {}", message);
-        }
+  static class Printer {
+    void print(final String message) {
+      LOG.debug("print: {}", message);
     }
+  }
 
-    @AllArgsConstructor
-    static class Dto {
-        @Getter
-        private final String name;
-    }
+  @AllArgsConstructor
+  static class Dto {
+    @Getter
+    private final String name;
+  }
 
-    public static Optional<Integer> staticMethodMax(final List<Integer> integers) {
-        integers.stream().map(Object::toString).forEach(LOG::debug);
-        return integers.stream().reduce(Math::max);
-    }
+  public static Optional<Integer> staticMethodMax(final List<Integer> integers) {
+    integers.stream().map(Object::toString).forEach(LOG::debug);
+    return integers.stream().reduce(Math::max);
+  }
 
-    public static void instanceMethodReference(final List<String> messages) {
-        final Printer printer = new Printer();
-        messages.forEach(printer::print);
-    }
+  public static void instanceMethodReference(final List<String> messages) {
+    final Printer printer = new Printer();
+    messages.forEach(printer::print);
+  }
 
-    public static List<Integer> instanceMethodNameClass(final List<Integer> numbers) {
-        // lambda version: numbers.stream().sorted((a, b) -> a.compareTo(b)).toList()
-        return numbers.stream().sorted(Integer::compareTo).toList();
-    }
+  public static List<Integer> instanceMethodNameClass(final List<Integer> numbers) {
+    // lambda version: numbers.stream().sorted((a, b) -> a.compareTo(b)).toList()
+    return numbers.stream().sorted(Integer::compareTo).toList();
+  }
 
-    public static List<Dto> constructor(final String name) {
-        final Function<String, Dto> dto = Dto::new;
-        return Arrays.asList(dto.apply(name));
-    }
+  public static List<Dto> constructor(final String name) {
+    final Function<String, Dto> dto = Dto::new;
+    return Arrays.asList(dto.apply(name));
+  }
 
 }

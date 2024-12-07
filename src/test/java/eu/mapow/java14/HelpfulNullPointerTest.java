@@ -10,23 +10,23 @@ import org.junit.jupiter.api.Test;
  */
 class HelpfulNullPointerTest {
 
-    /**
-     * The traditional error message has been like this: Exception in thread "main" java.lang.NullPointerException at
-     * de.mapow.java14.HelpfulNullPointer.throwNullPointer(HelpfulNullPointer.java:23)
-     */
-    @Test
-    void testThrowNullPointer() {
-        // act
-        final NullPointerException cause = Assertions.assertThrows(NullPointerException.class,
-                () -> HelpfulNullPointer.throwNullPointer(null));
+  /**
+   * The traditional error message has been like this: Exception in thread "main" java.lang.NullPointerException at
+   * de.mapow.java14.HelpfulNullPointer.throwNullPointer(HelpfulNullPointer.java:23)
+   */
+  @Test
+  void testThrowNullPointer() {
+    // act
+    final NullPointerException cause = Assertions.assertThrows(NullPointerException.class,
+        () -> HelpfulNullPointer.throwNullPointer(null));
 
-        // assert
-        BDDAssertions.then(cause).hasMessage("Cannot invoke \"String.toUpperCase()\" because \"arg\" is null");
-    }
+    // assert
+    BDDAssertions.then(cause).hasMessage("Cannot invoke \"String.toUpperCase()\" because \"arg\" is null");
+  }
 
-    @Test
-    void testThrowNullPointer_ShouldReturnUpperCaseString() {
-        BDDAssertions.then(HelpfulNullPointer.throwNullPointer("abc")).isEqualTo("ABC");
-    }
+  @Test
+  void testThrowNullPointer_ShouldReturnUpperCaseString() {
+    BDDAssertions.then(HelpfulNullPointer.throwNullPointer("abc")).isEqualTo("ABC");
+  }
 
 }

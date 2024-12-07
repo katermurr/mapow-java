@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
  */
 class TextBlockTest {
 
-    @Test
-    void testTextBlock() {
-        BDDAssertions.then(TextBlock.multilineQuery()).isEqualTo(TextBlock.query());
-    }
+  @Test
+  void testTextBlock() {
+    BDDAssertions.then(TextBlock.multilineQuery()).isEqualTo(TextBlock.query());
+  }
 
 }
