@@ -1,0 +1,23 @@
+Hallo,
+
+im Anhang dieser Mail finden Sie zwei Dateien: Ihren öffentlichen von uns beglaubigten OpenPGP-Schlüssel (signedPubKey.asc)
+und den öffentlichen Schlüssel unseres Signaturdienstes mit der Kennung ... (governikusPubKey.asc).
+
+Zur Aufnahme in Ihren Schlüsselbund speichern Sie bitte beide Dateien ab und importieren diese in Ihre PGP-Schlüsselverwaltung.
+Wahlweise können Sie in Ihrer Schlüsselverwaltung dem öffentlichen Schlüssel unseres Signaturdienstes (governikusPubKey.asc) vertrauen.
+Damit vertrauen Sie dann auch anderen durch unseren Signaturdienst beglaubigten OpenPGP-Schlüsseln.
+
+Für eine vertrauliche Kommunikation können Sie Ihren neuen öffentlichen OpenPGP-Schlüssel (signedPubKey.asc) Ihren Kommunikationspartnern
+direkt zukommen lassen. Optional können Sie ihn auch über die Schlüsselverwaltung auf einen öffentlichen PGP-Schlüsselserver hochladen.
+
+Vielen Dank für die Nutzung unseres Dienstes!
+
+Mit freundlichen Grüßen
+
+Governikus GmbH & Co. KG
+i.A. des Bundesamtes für Sicherheit in der Informationstechnik
+Hochschulring 4, D-28359 Bremen
+kontakt@governikus.de
+governikus.de
+
+https://pgp.governikus.de/
