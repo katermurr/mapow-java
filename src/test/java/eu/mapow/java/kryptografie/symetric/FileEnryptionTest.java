@@ -9,15 +9,6 @@ import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import eu.mapow.java.kryptografie.Algorithm;
-import eu.mapow.java.kryptografie.KeySizeAES;
-import eu.mapow.java.kryptografie.SecretKeyGenerator;
-
-import eu.mapow.java.kryptografie.symetric.Algorithm;
-import eu.mapow.java.kryptografie.symetric.FileEnryption;
-import eu.mapow.java.kryptografie.symetric.KeySizeAES;
-import eu.mapow.java.kryptografie.symetric.SecretKeyGenerator;
-
 /**
  * @author mapow
  * @since 2025-01-02
@@ -80,7 +71,8 @@ class FileEnryptionTest {
     final File inputFile = new File("src/test/resources/input.txt");
     final File ouputFile = new File("target/encrypted.dat");
     final String expectedMessage = "Failed to encrypt file: input.txt";
-    final String expectedRootCauseMessage = "Cannot invoke \"eu.mapow.java.kryptografie.Algorithm.getTransformation()\" because \"this.algorithm\" is null";
+    final String expectedRootCauseMessage = "Cannot invoke \"eu.mapow.java.kryptografie.symetric.Algorithm.getTransformation()\" "
+        + "because \"this.algorithm\" is null";
 
     // act
     final SecurityException expectedException = Assertions.assertThrows(SecurityException.class,
@@ -99,7 +91,8 @@ class FileEnryptionTest {
     final File encryptedFile = new File("target/encryptedFile.dat");
     final File outputFile = new File("target/decrypted.txt");
     final String expectedMessage = "Failed to encrypt file: encryptedFile.dat";
-    final String expectedRootCauseMessage = "Cannot invoke \"eu.mapow.java.kryptografie.Algorithm.getTransformation()\" because \"this.algorithm\" is null";
+    final String expectedRootCauseMessage = "Cannot invoke \"eu.mapow.java.kryptografie.symetric.Algorithm.getTransformation()\" "
+        + "because \"this.algorithm\" is null";
 
     // act
     final SecurityException expectedException = Assertions.assertThrows(SecurityException.class,

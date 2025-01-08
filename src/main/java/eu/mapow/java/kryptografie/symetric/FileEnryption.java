@@ -23,6 +23,7 @@ public class FileEnryption {
 
   private static final Logger LOG = LoggerFactory.getLogger(FileEnryption.class);
   private final Algorithm algorithm;
+  private int i;
 
   /**
    * The initialization vector is generated before encryption with SecureRandom. The IV is saved at the beginning of the
@@ -80,7 +81,7 @@ public class FileEnryption {
 
         // extract the IV from the encrypted file and initialize the same cipher with this IV
         final byte[] iv = new byte[algorithm.getBytes()];
-        fis.read(iv); // // Read the IV from the beginning of the file
+        i = fis.read(iv); // // Read the IV from the beginning of the file
         final IvParameterSpec ivSpec = new IvParameterSpec(iv);
         cipher.init(Cipher.DECRYPT_MODE, secretKey, ivSpec);
 
