@@ -1,4 +1,4 @@
-package eu.mapow.java.kryptografie;
+package eu.mapow.java.kryptografie.symetric;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ public enum Algorithm {
 
   private final String name;
 
-  /** block size */
+  /** Initialization Vector (IV) length (count of bytes). */
   private final int bytes;
   private final String transformation;
 

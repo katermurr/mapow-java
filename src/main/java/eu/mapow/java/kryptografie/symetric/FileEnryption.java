@@ -1,4 +1,4 @@
-package eu.mapow.java.kryptografie;
+package eu.mapow.java.kryptografie.symetric;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,11 +23,6 @@ public class FileEnryption {
 
   private static final Logger LOG = LoggerFactory.getLogger(FileEnryption.class);
   private final Algorithm algorithm;
-
-  /**
-   * Constant of AES initialization vector length (count of bytes).
-   */
-  static final int AES_IV_LENGTH = 16;
 
   /**
    * The initialization vector is generated before encryption with SecureRandom. The IV is saved at the beginning of the

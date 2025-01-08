@@ -1,4 +1,4 @@
-package eu.mapow.java.kryptografie;
+package eu.mapow.java.kryptografie.symetric;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;

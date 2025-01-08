@@ -1,4 +1,4 @@
-package eu.mapow.java.kryptografie;
+package eu.mapow.java.kryptografie.symetric;
 
 /**
  * @author menas

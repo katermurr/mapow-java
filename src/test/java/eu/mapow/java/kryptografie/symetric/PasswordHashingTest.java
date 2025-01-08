@@ -1,7 +1,9 @@
-package eu.mapow.java.kryptografie;
+package eu.mapow.java.kryptografie.symetric;
 
 import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.Test;
+
+import eu.mapow.java.kryptografie.symetric.PasswordHashing;
 
 /**
  * @author mapow

@@ -1,4 +1,4 @@
-package eu.mapow.java.kryptografie;
+package eu.mapow.java.kryptografie.symetric;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
