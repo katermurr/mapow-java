@@ -36,6 +36,11 @@ class FileEnryptionTest {
     fileEnryption.decryptFile(encryptedFile, decryptedFile, secretKey);
 
     // assert - decrypt
+    BDDAssertions.then(Files.readString(decryptedFile.toPath()))
+                 .startsWith("""
+                             Hallo,\r
+                             \r
+                             im Anhang dieser Mail finden Sie zwei Dateien: Ihren öffentlichen von uns beglaubigten OpenPGP-Schlüssel (signedPubKey.asc)""");
     BDDAssertions.then(Files.readAllLines(decryptedFile.toPath())).isEqualTo(Files.readAllLines(inputFile.toPath()));
   }
 
@@ -60,6 +65,11 @@ class FileEnryptionTest {
     fileEnryption.decryptFile(encryptedFile, decryptedFile, secretKey);
 
     // assert - decrypt
+    BDDAssertions.then(Files.readString(decryptedFile.toPath()))
+                 .startsWith("""
+                             Hallo,\r
+                             \r
+                             im Anhang dieser Mail finden Sie zwei Dateien: Ihren öffentlichen von uns beglaubigten OpenPGP-Schlüssel (signedPubKey.asc)""");
     BDDAssertions.then(Files.readAllLines(decryptedFile.toPath())).isEqualTo(Files.readAllLines(inputFile.toPath()));
   }
 
@@ -71,12 +81,14 @@ class FileEnryptionTest {
     final File inputFile = new File("src/test/resources/input.txt");
     final File ouputFile = new File("target/encrypted.dat");
     final String expectedMessage = "Failed to encrypt file: input.txt";
-    final String expectedRootCauseMessage = "Cannot invoke \"eu.mapow.java.kryptografie.symetric.Algorithm.getTransformation()\" "
-        + "because \"this.algorithm\" is null";
+    final String expectedRootCauseMessage
+      = "Cannot invoke \"eu.mapow.java.kryptografie.symetric.Algorithm.getTransformation()\" " +
+        "because \"this.algorithm\" is null";
 
     // act
-    final SecurityException expectedException = Assertions.assertThrows(SecurityException.class,
-        () -> fileEnryption.encryptFile(inputFile, ouputFile, secretKey));
+    final SecurityException expectedException
+      = Assertions.assertThrows(SecurityException.class,
+                                () -> fileEnryption.encryptFile(inputFile, ouputFile, secretKey));
 
     // assert
     BDDAssertions.then(expectedException).hasMessage(expectedMessage);
@@ -91,12 +103,14 @@ class FileEnryptionTest {
     final File encryptedFile = new File("target/encryptedFile.dat");
     final File outputFile = new File("target/decrypted.txt");
     final String expectedMessage = "Failed to encrypt file: encryptedFile.dat";
-    final String expectedRootCauseMessage = "Cannot invoke \"eu.mapow.java.kryptografie.symetric.Algorithm.getTransformation()\" "
-        + "because \"this.algorithm\" is null";
+    final String expectedRootCauseMessage
+      = "Cannot invoke \"eu.mapow.java.kryptografie.symetric.Algorithm.getTransformation()\" " +
+        "because \"this.algorithm\" is null";
 
     // act
-    final SecurityException expectedException = Assertions.assertThrows(SecurityException.class,
-        () -> fileEnryption.decryptFile(encryptedFile, outputFile, secretKey));
+    final SecurityException expectedException
+      = Assertions.assertThrows(SecurityException.class,
+                                () -> fileEnryption.decryptFile(encryptedFile, outputFile, secretKey));
 
     // assert
     BDDAssertions.then(expectedException).hasMessage(expectedMessage);
