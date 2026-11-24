@@ -1,4 +1,4 @@
-package eu.mapow.java.kryptografie.symetric;
+package eu.mapow.java.kryptografie.hashing;
 
 /**
  * @author menas
@@ -25,6 +25,7 @@ import lombok.NoArgsConstructor;
 class PasswordHashing {
 
   private static final Logger LOG = LoggerFactory.getLogger(PasswordHashing.class);
+  private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
   static String generateHash(final String password) throws Exception {
     final byte[] salt = generateRandomSalt();
@@ -42,9 +43,8 @@ class PasswordHashing {
   }
 
   private static byte[] generateRandomSalt() {
-    final SecureRandom secureRandom = new SecureRandom();
     final byte[] salt = new byte[16];
-    secureRandom.nextBytes(salt);
+    SECURE_RANDOM.nextBytes(salt);
     return salt;
   }
 

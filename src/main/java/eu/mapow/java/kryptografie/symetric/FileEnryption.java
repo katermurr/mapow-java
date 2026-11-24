@@ -23,6 +23,7 @@ public class FileEnryption {
 
   private static final Logger LOG = LoggerFactory.getLogger(FileEnryption.class);
   private final Algorithm algorithm;
+  private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
   /**
    * The initialization vector is generated before encryption with SecureRandom. The IV is saved at the beginning of the
@@ -43,8 +44,7 @@ public class FileEnryption {
        * (initialization vector). If no IV has been explicitly set and cipher.getIV() is called, it returns null.
        */
       final byte[] initVectorBytes = new byte[algorithm.getBytes()];
-      final SecureRandom secureRandom = new SecureRandom();
-      secureRandom.nextBytes(initVectorBytes);
+      SECURE_RANDOM.nextBytes(initVectorBytes);
       final IvParameterSpec initVector = new IvParameterSpec(initVectorBytes);
 
       cipher.init(Cipher.ENCRYPT_MODE, secretKey, initVector);
